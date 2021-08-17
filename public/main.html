@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tomato</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+  <div id="header">
+    <img class="logo" src="images/tomato512.png" alt="Tomato Logo">
+    <span class="title">Tomato</span>
+  </div>
+
+  <div class="searchContainer">
+    <div id="searchWrapper">
+      <label>Enter an acronym or search term:
+        <input type="text" name="search" id="search" placeholder="Search.." size="30" maxlength="100" class="searchBar">
+      </label>
+      <button id="copyResults">Copy Results</button>
+    </div>
+  </div>
+  <br>
+
+  <div id="results">
+  </div>
+
+  <br>
+  <div id="edit">
+    <form method="get">
+      <fieldset>
+
+        <legend>Add a New Entry or Edit an Existing Entry</legend>
+        <span id="editId" hidden></span>
+        <label>Acronym: </label>
+        <input type="text" name="acronym" id="acronym">
+        <br>
+        <label>Term: </label>
+        <input type="text" name="term" id="term">
+        <br>
+        <label>Definition: </label>
+        <input type="text" name="definition" id="definition">
+        <br>
+        <input type="submit" value="Edit" id="editSubmit">
+        <input type="submit" value="Insert" id="insertSubmit">
+
+      </fieldset>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<h1>MySQL Results:</h1>
+<p>{{results}}</p>
+
+<table>
+  <tr>
+    <th>Acronym</th>
+    <th>Term</th>
+    <th>Definition</th>
+  </tr>
+  {{#each results}}
+  <tr>
+    <td>{{this.acronym}}
+    <td>{{this.term}}
+    <td>{{this.definition}}
+  </tr>
+  {{/each}}
+</table>
