@@ -187,13 +187,20 @@ document.addEventListener("DOMContentLoaded", () => {
         req.addEventListener('load', function () {
             if (req.status >= 200 && req.status < 400) {
                 console.log(req);
-                result = req.response;
+                var result = req.response;
                 console.log(result);
                 if (result.includes("incorrect")) {
                     setFormMessage(loginForm, "error", "Invalid username/password combination.");
                 } else {
-                    sessionStorage.setItem('username', JSON.stringify(username));
-                    window.location = './main.html';
+                    var text = JSON.parse(result);
+                    var type = text[0].type;
+                    if (type === 'User') {
+                        sessionStorage.setItem('username', JSON.stringify(username));
+                        window.location = './main.html';
+                    } else {
+                        sessionStorage.setItem('username', JSON.stringify(username));
+                        window.location = './admin.html';
+                    }
                 }
             } else {
                 console.log(req);
