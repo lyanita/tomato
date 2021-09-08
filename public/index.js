@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (result.includes("incorrect")) {
                     setFormMessage(loginForm, "error", "Invalid username/password combination.");
                 } else {
+                    sessionStorage.setItem('username', JSON.stringify(username));
                     window.location = './main.html';
                 }
             } else {

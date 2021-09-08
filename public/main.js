@@ -1,4 +1,6 @@
 window.addEventListener('load', (event) => {
+  var username = JSON.parse(sessionStorage.getItem('username'));
+  console.log(username);
   var req = new XMLHttpRequest();
   req.open("GET", "https://tomato-dictionary.herokuapp.com/", true);
   req.onload = function(e) {
@@ -12,6 +14,7 @@ window.addEventListener('load', (event) => {
         let result = document.getElementById('results');
         result.appendChild(buildTable());
         console.log(response);
+        //displayUser(username);
         showTable(response);
         deleteFcn();
         editFcn();
@@ -31,6 +34,11 @@ window.addEventListener('load', (event) => {
   };*/
   req.send(null);
 });
+
+function displayUser(response) {
+  let container = document.getElementById('greetings');
+
+}
 
 function showTable(response) {
   let table = document.getElementById('tableResult');

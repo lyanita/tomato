@@ -125,7 +125,8 @@ app.get('/login', function (req, res) {
       if (Number(rows.rowCount) === Number(0)) {
         var string = "Username and password combination are incorrect. Please try again."
       } else {
-        var string = "Login successful."
+        var string = JSON.stringify(rows);
+        //var string = "Login successful."
       }
     }
     console.log(string);
