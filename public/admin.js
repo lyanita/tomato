@@ -402,7 +402,7 @@ function getRequests() {
 }
 
 function showRequests(response) {
-  let table = document.getElementById('tableResult');
+  let table = document.getElementById('requestResult');
   while (table.firstChild) {
     table.removeChild(table.firstChild);
   }
