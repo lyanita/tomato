@@ -460,9 +460,33 @@ function showRequests(response) {
     }
     num = count + 1
     value = response[count].id;
-    let delButton = buildButton(value, "delete", "Delete", num, row);
+    let delButton = buildButton(value, "deleteRequest", "Delete", num, row);
     let addButton = buildButton(value, "add", "Add", num, row)
     //cellContent = reponse[count].ranking;
     table.appendChild(row);
   }
+};
+
+function deleteRequest() {
+  buttons = document.querySelectorAll('button.deleteRequest');
+  buttons.forEach((button) => {
+    button.addEventListener('click', function (event) {
+      let id = this.id;
+      let ind = this.value;
+      var req = new XMLHttpRequest();
+      req.open('GET', 'https://tomato-dictionary.herokuapp.com/deleteRequests?id=' + id, true);
+      req.addEventListener('load', function () {
+        if (req.status >= 200 && req.status < 400) {
+          console.log(req);
+          var row = document.getElementById(id);
+          row.parentNode.parentNode.removeChild(row.parentNode);
+        } else {
+          console.log("Did Not Delete.")
+        }
+      });
+      req.send(null);
+      event.preventDefault();
+      searchFcn();
+    }, false);
+  });
 };

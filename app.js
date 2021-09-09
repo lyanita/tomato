@@ -226,6 +226,22 @@ app.get('/requests', function (req, res) {
   });
 });
 
+app.get('/deleteRequest', function (req, res, next) {
+  var context = {};
+  var idVar = req.query.id;
+  pool.query("DELETE FROM requests WHERE id = $1;", [req.query.id], function (err, result) {
+    console.log(typeof req.query.id);
+    console.log(err);
+    if (err) {
+      next(err);
+      return;
+    }
+    context.results = "Deleted " + result.changedRows + " rows.";
+    string = "Deleted " + result.changedRows + " rows.";
+    res.send(string);
+  });
+});
+
 app.get('/', function (req, res) {
   var qParams = [];
   var context = {};
