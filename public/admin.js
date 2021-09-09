@@ -382,7 +382,7 @@ function copyResults() {
 function getRequests() {
   document.getElementById('getRequests').addEventListener('click', function (event) {
     var req = new XMLHttpRequest();
-    req.open('POST', 'https://tomato-dictionary.herokuapp.com/requests', true);
+    req.open('GET', 'https://tomato-dictionary.herokuapp.com/requests', true);
     req.addEventListener('load', function () {
       if (req.readyState === 4) {
         if (req.status >= 200 && req.status < 400) {
