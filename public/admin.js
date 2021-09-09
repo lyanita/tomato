@@ -407,20 +407,23 @@ function showRequests(response) {
     table.removeChild(table.firstChild);
   }
   let headRow = document.createElement("tr");
-  for (let head = 1; head <= 4; head++) {
+  for (let head = 1; head <= 5; head++) {
     let headCell = document.createElement("th");
     switch (head) {
       case 1:
-        headContent = "Acronym";
+        headContent = "Date";
         break;
       case 2:
-        headContent = "Term";
+        headContent = "User";
         break;
       case 3:
-        headContent = "Definition";
+        headContent = "Acronym";
         break;
       case 4:
-        headContent = "Likes";
+        headContent = "Term";
+        break;
+      case 5:
+        headContent = "Definition";
         break;
       default:
         break;
