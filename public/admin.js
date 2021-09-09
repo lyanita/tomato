@@ -481,7 +481,7 @@ function deleteRequest() {
       req.addEventListener('load', function () {
         if (req.status >= 200 && req.status < 400) {
           console.log(req);
-          var row = document.getElementById(id);
+          var row = document.getElementById(text);
           row.parentNode.parentNode.removeChild(row.parentNode);
         } else {
           console.log("Did Not Delete.")
