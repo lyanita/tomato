@@ -23,7 +23,6 @@ window.addEventListener('load', (event) => {
         buildCount();
         copyResults();
         getRequests();
-        deleteRequest();
       } else {
         console.log("Error");
       }
@@ -466,6 +465,7 @@ function showRequests(response) {
     //cellContent = reponse[count].ranking;
     table.appendChild(row);
   }
+  deleteRequest();
 };
 
 function deleteRequest() {
