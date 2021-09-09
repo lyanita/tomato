@@ -210,6 +210,22 @@ app.post('/insert-login', function (req, res, next) {
   });
 });*/
 
+app.get('/requests', function (req, res) {
+  var qParams = [];
+  var context = {};
+  pool.query('SELECT * FROM requests ORDER BY date ASC, acronym ASC, term ASC, definition ASC', function (err, rows, fields) {
+    if (err) {
+      next(err);
+      return;
+    }
+    string = JSON.stringify(rows);
+    var results = JSON.parse(string);
+    context.results = string;
+    console.log(string);
+    res.send(string);
+  });
+});
+
 app.get('/', function (req, res) {
   var qParams = [];
   var context = {};
