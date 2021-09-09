@@ -474,7 +474,7 @@ function deleteRequest() {
       let id = this.id;
       let ind = this.value;
       var req = new XMLHttpRequest();
-      req.open('GET', 'https://tomato-dictionary.herokuapp.com/deleteRequests?id=' + id, true);
+      req.open('GET', 'https://tomato-dictionary.herokuapp.com/deleteRequest?id=' + id, true);
       req.addEventListener('load', function () {
         if (req.status >= 200 && req.status < 400) {
           console.log(req);
