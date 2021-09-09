@@ -23,6 +23,7 @@ window.addEventListener('load', (event) => {
         buildCount();
         copyResults();
         getRequests();
+        deleteRequest();
       } else {
         console.log("Error");
       }
@@ -459,7 +460,7 @@ function showRequests(response) {
       row.appendChild(cell);
     }
     num = count + 1
-    value = response[count].id;
+    value = "r" + response[count].id;
     let delButton = buildButton(value, "deleteRequest", "Delete", num, row);
     let addButton = buildButton(value, "add", "Add", num, row)
     //cellContent = reponse[count].ranking;
@@ -471,7 +472,8 @@ function deleteRequest() {
   buttons = document.querySelectorAll('button.deleteRequest');
   buttons.forEach((button) => {
     button.addEventListener('click', function (event) {
-      let id = this.id;
+      var text = this.id;
+      let id = text.substr(1);
       let ind = this.value;
       var req = new XMLHttpRequest();
       req.open('GET', 'https://tomato-dictionary.herokuapp.com/deleteRequest?id=' + id, true);
@@ -486,7 +488,6 @@ function deleteRequest() {
       });
       req.send(null);
       event.preventDefault();
-      searchFcn();
     }, false);
   });
 };
