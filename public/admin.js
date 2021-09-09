@@ -395,7 +395,9 @@ function getRequests() {
           showRequests(response);
         }
       }
-    });
+    })
+    req.send(null);
+    event.preventDefault();;
   });
 }
 
