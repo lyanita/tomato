@@ -22,6 +22,7 @@ window.addEventListener('load', (event) => {
         searchFcn();
         buildCount();
         copyResults();
+        getRequests();
       } else {
         console.log("Error");
       }
