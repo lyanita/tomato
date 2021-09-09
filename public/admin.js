@@ -473,6 +473,7 @@ function deleteRequest() {
   buttons.forEach((button) => {
     button.addEventListener('click', function (event) {
       var text = this.id;
+      console.log(text);
       let id = text.substr(1);
       let ind = this.value;
       var req = new XMLHttpRequest();
