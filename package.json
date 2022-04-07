@@ -19,7 +19,7 @@
     "express-handlebars": "^5.1.0",
     "express-session": "^1.11.3",
     "firebase": "^8.9.0",
-    "forever": "^4.0.1",
+    "forever": "^4.0.3",
     "mysql": "^2.8.0",
     "pg": "^8.6.0",
     "request": "^2.88.2"
